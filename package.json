@@ -1,0 +1,12 @@
+{
+  "name": "indecision",
+  "version": "1.0.0",
+  "description": "A decision making app built in react",
+  "main": "index.js",
+  "author": "Nathaniel Rand",
+  "license": "MIT",
+  "dependencies": {
+    "babel-preset-env": "1.5.2",
+    "babel-preset-react": "6.24.1"
+  }
+}
