@@ -1,4 +1,5 @@
-# ReactJS Web Application
+# Indecision - Web Application
+## Built in ReactJS
 
 ## Common Commands
 ---
@@ -16,4 +17,13 @@
 
 ## Babel
 #### Watch src app.js file for changes to auto-update public app.js file. If failed, check dependencies are installed (reference Yarn commands).
-`babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch`# indecision
+`babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch`
+
+
+## Stack Includes:
+- ReactJS
+- JSX
+- Babel
+- Yarn
+- live-server (development server)
+- expressjs (production server)

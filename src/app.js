@@ -43,13 +43,12 @@ class IndecisionApp extends React.Component {
 		});
 	}
 	render() {
-		const title = 'Indecision';
-		const subtitle = 'Trust us, when you can trust yourself';
+		const subtitle = 'We help you decide';
 
 		return (
 			<div>
 				{/* Components and props */}
-				<Header title={title} subtitle={subtitle} />
+				<Header subtitle={subtitle} />
 				<Action
 					hasOption={this.state.options.length > 0}
 					handlePickOption={this.handlePickOption}
@@ -66,59 +65,57 @@ class IndecisionApp extends React.Component {
 	}
 }
 
-class Header extends React.Component {
-	render() {
-		return (
-			<div>
-				<h1>{this.props.title}</h1>
-				<h2>{this.props.subtitle}</h2>
-			</div>
-		);
-	}
-}
+const Header = (props) => {
+	return (
+		<div>
+			<h1>{props.title}</h1>
+			{/* Conditional rendering if subtitle exists/passed */}
+			{props.subtitle && <h2>{props.subtitle}</h2>}
+		</div>
+	);
+};
 
-class Action extends React.Component {
-	render() {
-		return (
-			<div>
-				<button
-					onClick={this.props.handlePickOption}
-					disabled={!this.props.hasOption}
-				>Make A Decision</button>
-			</div>
-		);
-	}
-}
+// Default Header props
+Header.defaultProps = {
+	title: 'Indecision'
+};
 
-class Options extends React.Component {
-	render() {
-		return (
-			<div>
-				<h2>Insert time here</h2>
-				<h4>Options Count: {this.props.options.length}</h4>
-				{/* 
-					TODO: Reset option's validations error message when delete options is called 
-					Example: send empty value to form, error message called, and then call delete all options
-					but the error message remains.
-				*/}
-				<button onClick={this.props.handleDeleteOptions}>Remove All</button>
-				{
-					this.props.options.map((option) => <Option key={option} optionText={option} />)
-				}
-			</div>
-		);
-	}
-}
+const Action = (props) => {
+	return (
+		<div>
+			<button
+				onClick={props.handlePickOption}
+				disabled={!props.hasOption}
+			>Make A Decision</button>
+		</div>
+	);
+};
 
-class Option extends React.Component {
-	render() {
-		return (
-			<div>
-				Option: {this.props.optionText}
-			</div>
-		);
-	}
-}
+const Options = (props) => {
+	return (
+		<div>
+			<h2>Insert time here</h2>
+			<h4>Options Count: {props.options.length}</h4>
+			{/* 
+				TODO: Reset option's validations error message when delete options is called 
+				Example: send empty value to form, error message called, and then call delete all options
+				but the error message remains.
+			*/}
+			<button onClick={props.handleDeleteOptions}>Remove All</button>
+			{
+				props.options.map((option) => <Option key={option} optionText={option} />)
+			}
+		</div>
+	);
+};
+
+const Option = (props) => {
+	return (
+		<div>
+			Option: {props.optionText}
+		</div>
+	);
+};
 
 class AddOption extends React.Component {
 	constructor(props) {
@@ -153,5 +150,31 @@ class AddOption extends React.Component {
 		);
 	}
 }
+
+// * REFERENCES
+// Stateless Functional Component
+
+// const User = (props) => {
+// 	return (
+// 		<div>
+// 			<p>Name: {props.name}</p>
+// 			<p>Age: </p>
+// 		</div>
+// 	);
+// };
+
+// * REFERENCE  
+// Class based component that can be a stateless function component
+
+// class Header extends React.Component {
+// 	render() {
+// 		return (
+// 			<div>
+// 				<h1>{this.props.title}</h1>
+// 				<h2>{this.props.subtitle}</h2>
+// 			</div>
+// 		);
+// 	}
+// }
 
 ReactDOM.render(<IndecisionApp />, document.getElementById('app'));
