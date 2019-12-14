@@ -10,6 +10,37 @@ class IndecisionApp extends React.Component {
       options: []
     };
   }
+  // Built in React Method - componentDidMount method. Rendered if parent 
+  // component is mounted in application. In this case, IndecisionApp 
+  // is mounted with ReactDOM.render below.
+  componentDidMount() {
+    // Try our catch and catch any errors so app doesn't crash.
+    // Ex: invalid JSON data/format
+    try {
+      const json = localStorage.getItem('options');
+      const options = JSON.parse(json);
+
+      if (options) {
+        this.setState(() => ({ options: options }));
+      }
+    } catch (e) {
+      // Fall back to empty array aka do nothing at all
+    }
+  }
+  // Built in React Method - fired once the component changes, 
+  // such as the state value or prop values changes.
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.options.length !== this.state.options.length) {
+      const json = JSON.stringify(this.state.options);
+      localStorage.setItem('options', json);
+      console.log('Saving data to local storage');
+    }
+  }
+  // Built in React Method - fired before the component goes away
+  // such as a page change.
+  componentWillUnmount() {
+    console.log('componentWillUnmount');
+  }
   // DeleteOptions method
   handleDeleteOptions() {
     // Arrow function to implicitly return the object and
@@ -107,6 +138,7 @@ const Options = (props) => {
 				but the error message remains.
 			*/}
       <button onClick={props.handleDeleteOptions}>Remove All</button>
+      {props.options.length === 0 && <p>Add options to get started!</p>}
       {
         props.options.map((option) => (
           <Option
@@ -124,6 +156,10 @@ const Option = (props) => {
   return (
     <div>
       {props.optionText}
+      {/* 
+        Todo: Add % chance of option being picked next to each option.
+        Sudo: 1 divided by options.length returns % chance of option being picked.
+       */}
       <button
         // Prop: Pass an in-line arrow function with "e" argument when
         // the button gets clicked and call props.handleDeleteOption and 
@@ -155,6 +191,11 @@ class AddOption extends React.Component {
 
     // Implicit return of error object using short-hand arrow function.
     this.setState(() => ({ error: error }));
+
+    // Clear data from input if no error returned
+    if (!error) {
+      e.target.elements.option.value = '';
+    }
   }
   render() {
     return (
