@@ -14,6 +14,10 @@ Instructions for configuration, development, and deployment.
 -- Used in development environment only. Run command on root project folder.
 -- Open new terminal window, nav to project root folder, and run the command below:
 
+(Local module - script command via package.json)
+'yarn run server'
+
+(Inactive: global module)
 `live-server public`
 
 ---
@@ -22,6 +26,10 @@ Instructions for configuration, development, and deployment.
 -- Watch src app.js file for changes to auto-update public app.js file. If failed, check dependencies are installed (reference Yarn commands).
 -- Open new terminal window, nav to project root folder, and run the command below:
 
+(Local module - script command via package.json)
+'yarn run build'
+
+(Inactive: global module)
 `babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch`
 
 
