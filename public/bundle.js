@@ -65,9 +65,79 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_js__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__person_js__ = __webpack_require__(2);
+// import './utils.js';
+
+
+
+const person = 26
+
+// Utils.js variables
 console.log('app.js is running');
+console.log(__WEBPACK_IMPORTED_MODULE_0__utils_js__["c" /* square */](4));
+console.log(__WEBPACK_IMPORTED_MODULE_0__utils_js__["a" /* add */](120, 4));
+console.log(__WEBPACK_IMPORTED_MODULE_0__utils_js__["b" /* default */](100, 81));
+
+// Person.js variables
+console.log(__WEBPACK_IMPORTED_MODULE_1__person_js__["c" /* isAdult */](person));
+console.log(__WEBPACK_IMPORTED_MODULE_1__person_js__["a" /* canDrink */](person));
+console.log(__WEBPACK_IMPORTED_MODULE_1__person_js__["b" /* default */](person));
+
+/***/ }),
+/* 1 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return square; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return subtract; });
+console.log('utils.js is running');
+
+// Named Exports
+// 1. Declare export separately.
+const square = (x) => x * x;
+
+// 2. Short-hand "export" is the same thing as declaring the export below.
+const add = (a, b) => a + b;
+/* harmony export (immutable) */ __webpack_exports__["a"] = add;
+
+
+// Default export
+// 1. Basic default export 
+const subtract = (a, b) => a - b;
+
+// 2. Short-hand default export:
+// export default subtract;
+// 3. Extra shirt-hand default export with just the expression:
+// export default (a, b) => a - b;
+
+/***/ }),
+/* 2 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+console.log('person.js is running')
+
+// Named Exports:
+const isAdult = (age) => age >= 18;
+/* harmony export (immutable) */ __webpack_exports__["c"] = isAdult;
+
+const canDrink = (age) => age >= 21;
+/* harmony export (immutable) */ __webpack_exports__["a"] = canDrink;
+
+// Names Export alternative:
+// export { isAdult, canDrink };
+
+// Default Export
+const isSenior = (age) => age >= 65;
+/* harmony default export */ __webpack_exports__["b"] = (isSenior);
+
+// Alternative
+// export { isAdult, canDrink, isSenior as default};
 
 /***/ })
 /******/ ]);
