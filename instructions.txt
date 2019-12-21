@@ -2,45 +2,62 @@ Indecision - Web Application
 
 Instructions for configuration, development, and deployment.
 
-Stack Includes:
+------------------------------------------
+Stack:
 - ReactJS
 - JSX
 - Babel
 - Yarn
 - live-server (development server)
 - expressjs (production server)
+------------------------------------------
 
 Third-party Packages (Found in: package.json):
-- yarn add react@16.0.0 - https://www.npmjs.com/package/react
-- yarn add react-dom@16.0.0 - https://www.npmjs.com/package/react-dom
-- yarn add validator@8.0.0 - https://www.npmjs.com/package/validator
-- yarn add babel-core@6.25.0 - https://www.npmjs.com/package/babel-core
-  - Note: allows you to run babel from tools like webpack; Still needs configuration with presets
-- yarn add babel-loader@7.1.1 - https://www.npmjs.com/package/babel-loader
-  - Note: a webpack plugin; teach webpack how to run babel when webpack sees certain files
 
+Package: https://www.npmjs.com/package/react
+Command: yarn add react@16.0.0
 
-Common Commands:
---- Yarn
+Package: https://www.npmjs.com/package/react-dom
+Command: yarn add react-dom@16.0.0
+
+Package: https://www.npmjs.com/package/validator
+Command: yarn add validator@8.0.0
+
+Package: https://www.npmjs.com/package/babel-core
+Command: yarn add babel-core@6.25.0
+Note: allows you to run babel from tools like webpack; Still needs configuration with presets
+
+Package: https://www.npmjs.com/package/babel-loader
+Command: yarn add babel-loader@7.1.1
+Note: a webpack plugin; teach webpack how to run babel when webpack sees certain files
+
+------------------------------------------
+
+Start Webpack Dev Server
+Command: 'yarn run dev-server'
+
+------------------------------------------
+
+Yarn
 - Install all dependencies from package.json. Useful for spinning up other projects.
-`yarn install`
+Command: `yarn install`
 
---- Development Server
+Development Server
 - Used in development environment only. Run command on root project folder.
 - Open new terminal window, nav to project root folder, and run the command below:
 
 (Local module - script command via package.json)
-'yarn run server'
+Command: 'yarn run server'
 
 (Inactive: global module)
-`live-server public`
+Command: `live-server public`
 
---- Babel
+Babel
 - Watch src app.js file for changes to auto-update public app.js file. If failed, check dependencies are installed (reference Yarn commands).
 - Open new terminal window, nav to project root folder, and run the command below:
 
 (Local module - script command via package.json)
-'yarn run build'
+Command: 'yarn run build'
 
 (Inactive: global module)
-`babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch`
+Command: `babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch`
