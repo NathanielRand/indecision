@@ -5,17 +5,44 @@ import Header from './Header'
 import Action from './Action'
 
 export default class IndecisionApp extends React.Component {
-  constructor(props) {
-    super(props);
-    // Bind to pass down state to child component
-    this.handleDeleteOptions = this.handleDeleteOptions.bind(this);
-    this.handleDeleteOption = this.handleDeleteOption.bind(this);
-    this.handlePickOption = this.handlePickOption.bind(this);
-    this.handleAddOption = this.handleAddOption.bind(this);
-    this.state = {
-      options: []
-    };
-  }
+  state = {
+    options: []
+  };
+  // DeleteOptions class property
+  handleDeleteOptions = () => {
+    // Arrow function to implicitly return the object and
+    // set the object state to an empty options array. 
+    this.setState(() => ({ options: [] }));
+  };
+  // DeleteOption class property
+  handleDeleteOption = (optionToRemove) => {
+    this.setState((prevState) => ({
+      options: prevState.options.filter((option) => optionToRemove !== option)
+    }));
+  };
+  // PickOption class property
+  handlePickOption = () => {
+    const randomNum = Math.floor(Math.random() * this.state.options.length);
+    const option = this.state.options[randomNum];
+    alert(option);
+  };
+  // AddOption class property
+  handleAddOption = (option) => {
+    // Validations
+    if (!option) {
+      return 'Enter valid value to add option';
+    } else if (this.state.options.indexOf(option) > -1) {
+      // Check if index is greater than -1, which tells us the
+      // option already exists. 0, 1, etc. are assigned to existing
+      // options.
+      return 'Option already exists'
+    }
+    // Arrow function implicitly returning an object.
+    this.setState((prevState) => ({
+      options: prevState.options.concat([option])
+    }));
+  };
+
   // Built in React Method - componentDidMount method. Rendered if parent 
   // component is mounted in application. In this case, IndecisionApp 
   // is mounted with ReactDOM.render below.
@@ -46,41 +73,6 @@ export default class IndecisionApp extends React.Component {
   // such as a page change.
   componentWillUnmount() {
     console.log('componentWillUnmount');
-  }
-  // DeleteOptions method
-  handleDeleteOptions() {
-    // Arrow function to implicitly return the object and
-    // set the object state to an empty options array. 
-    this.setState(() => ({ options: [] }));
-  }
-  // DeleteOption method (singular)
-  handleDeleteOption(optionToRemove) {
-    this.setState((prevState) => ({
-      options: prevState.options.filter((option) => optionToRemove !== option)
-    }));
-  }
-  // PickOption method
-  handlePickOption() {
-    const randomNum = Math.floor(Math.random() * this.state.options.length);
-    const option = this.state.options[randomNum];
-    console.log(randomNum);
-    alert(option);
-  }
-  // AddOption method
-  handleAddOption(option) {
-    // Validations
-    if (!option) {
-      return 'Enter valid value to add option';
-    } else if (this.state.options.indexOf(option) > -1) {
-      // Check if index is greater than -1, which tells us the
-      // option already exists. 0, 1, etc. are assigned to existing
-      // options.
-      return 'Option already exists'
-    }
-    // Arrow function implicitly returning an object.
-    this.setState((prevState) => ({
-      options: prevState.options.concat([option])
-    }));
   }
   // Render class component
   render() {
