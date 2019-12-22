@@ -1,19 +1,25 @@
 import React from 'react';
-import AddOption from './AddOption'
-import Options from './Options'
 import Header from './Header'
 import Action from './Action'
+import AddOption from './AddOption'
+import Options from './Options'
+import OptionModal from './OptionModal'
 
 export default class IndecisionApp extends React.Component {
   state = {
-    options: []
+    options: [],
+    selectedOption: undefined
   };
-  // DeleteOptions class property
+  // Delete Options state class property
   handleDeleteOptions = () => {
     // Arrow function to implicitly return the object and
     // set the object state to an empty options array. 
     this.setState(() => ({ options: [] }));
   };
+  // Clear selected Option state class property
+  handleClearSelectedOption = () => {
+    this.setState(() => ({ selectedOption: '' }));
+  }
   // DeleteOption class property
   handleDeleteOption = (optionToRemove) => {
     this.setState((prevState) => ({
@@ -24,7 +30,7 @@ export default class IndecisionApp extends React.Component {
   handlePickOption = () => {
     const randomNum = Math.floor(Math.random() * this.state.options.length);
     const option = this.state.options[randomNum];
-    alert(option);
+    this.setState(() => ({ selectedOption: option }));
   };
   // AddOption class property
   handleAddOption = (option) => {
@@ -93,6 +99,10 @@ export default class IndecisionApp extends React.Component {
         />
         <AddOption
           handleAddOption={this.handleAddOption}
+        />
+        <OptionModal
+          selectedOption={this.state.selectedOption}
+          handleClearSelectedOption={this.handleClearSelectedOption}
         />
       </div>
     );

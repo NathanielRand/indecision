@@ -31,6 +31,9 @@ Package: https://www.npmjs.com/package/babel-loader
 Command: yarn add babel-loader@7.1.1
 Note: a webpack plugin; teach webpack how to run babel when webpack sees certain files
 
+Package: https://github.com/reactjs/react-modal
+Command: yarn add react-module@2.2.2
+
 ------------------------------------------
 
 Start Webpack Dev Server
