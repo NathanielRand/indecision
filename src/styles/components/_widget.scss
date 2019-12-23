@@ -1,0 +1,28 @@
+.widget {
+  background: $light-blue;
+  color: $off-white;
+  padding: 1.0rem;
+  border-radius: 1.0rem 3.0rem;
+  margin-bottom: $l-size;
+}
+
+.widget-header {
+  background: $blue;
+  color: $peach;
+  display: flex;
+  justify-content: space-between;
+  padding: $s-size;
+  border-radius: .5rem 1.5rem;
+}
+
+.widget-header__title {
+  margin: 0;
+}
+
+.widget__alert {
+  padding: $l-size;
+  border-bottom: .16rem solid $peach;
+  margin: 0;
+  color: lighten($color: $peach, $amount: 1);
+  text-align: center;
+}

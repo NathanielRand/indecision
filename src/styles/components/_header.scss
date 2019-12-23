@@ -1,6 +1,6 @@
 .header {
   background: $off-black;
-  color: white;
+  color: lighten($color: $peach, $amount: 1);
   margin-bottom: $l-size;
   padding: $m-size 0;
 }

@@ -89,18 +89,21 @@ export default class IndecisionApp extends React.Component {
         {/* Components and props */}
         <Header subtitle={subtitle} />
         <div className="container">
+          <p>Insert Date and Time</p>
           <Action
             hasOption={this.state.options.length > 0}
             handlePickOption={this.handlePickOption}
           />
-          <Options
-            options={this.state.options}
-            handleDeleteOptions={this.handleDeleteOptions}
-            handleDeleteOption={this.handleDeleteOption}
-          />
-          <AddOption
-            handleAddOption={this.handleAddOption}
-          />
+          <div className="widget">
+            <Options
+              options={this.state.options}
+              handleDeleteOptions={this.handleDeleteOptions}
+              handleDeleteOption={this.handleDeleteOption}
+            />
+            <AddOption
+              handleAddOption={this.handleAddOption}
+            />
+          </div>
         </div>
         <OptionModal
           selectedOption={this.state.selectedOption}
