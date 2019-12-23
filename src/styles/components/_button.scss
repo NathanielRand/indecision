@@ -3,7 +3,7 @@
   background: -webkit-linear-gradient($peach-webkit);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient($peach-linear); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   border: none;
-  border-bottom: .3rem solid darken($color: $peach, $amount: 5%); 
+  border-bottom: .6rem solid darken($color: $peach, $amount: 5%); 
   border-radius: .8rem 2.4rem;
   color: white;
   font-size: $l-size;
@@ -22,7 +22,7 @@
   background: -webkit-linear-gradient($peach-webkit);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient($peach-linear); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   border: none;
-  border-bottom: .3rem solid darken($color: $peach, $amount: 5%); 
+  border-bottom: .4rem solid darken($color: $peach, $amount: 5%); 
   border-radius: 0rem .3rem .9rem 0rem;  
   color: white;
   font-weight: 500;
