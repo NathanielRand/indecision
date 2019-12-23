@@ -5,6 +5,7 @@ const Option = (props) => (
   <div>
     {props.optionText}
     <button
+      className="button button--link"
       // Prop: Pass an in-line arrow function with "e" argument when
       // the button gets clicked and call props.handleDeleteOption and 
       // call it with props.optionText or else event object 

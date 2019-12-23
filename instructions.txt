@@ -2,6 +2,9 @@ Indecision - Web Application
 
 Instructions for configuration, development, and deployment.
 
+Todo:
+- Resolve: Error realted to sass-loader: https://github.com/webpack-contrib/sass-loader/issues/761
+
 ------------------------------------------
 Stack:
 - ReactJS
@@ -33,6 +36,25 @@ Note: a webpack plugin; teach webpack how to run babel when webpack sees certain
 
 Package: https://github.com/reactjs/react-modal
 Command: yarn add react-module@2.2.2
+
+Package: https://www.npmjs.com/package/css-loader
+Command: yarn add css-loader@0.28.4
+
+Package: https://www.npmjs.com/package/style-loader
+Command: yarn add style-loader@0.18.2
+
+Package: https://www.npmjs.com/package/sass-loader
+Command: yarn add sass-loader@7.3.1
+
+Package: https://www.npmjs.com/package/node-sass
+Command: yarn add node-sass@4.13.0
+
+Package: https://necolas.github.io/normalize.css/
+Command: yarn add normalize.css@7.0.0
+
+WARNINGS:
+warning " > react-modal@2.2.2" has incorrect peer dependency "react@^0.14.0 || ^15.0.0".
+warning " > react-modal@2.2.2" has incorrect peer dependency "react-dom@^0.14.0 || ^15.0.0".
 
 ------------------------------------------
 
