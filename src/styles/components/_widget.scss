@@ -21,7 +21,7 @@
 
 .widget__alert {
   padding: $l-size;
-  border-bottom: .16rem solid $peach;
+  border-bottom: 1px solid lighten($color: $light-blue, $amount: 10%);
   margin: 0;
   color: lighten($color: $peach, $amount: 1);
   text-align: center;
