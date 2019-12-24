@@ -1,0 +1,25 @@
+.add-option-error {
+  color: lighten($color: $peach, $amount: 15);
+  font-style: italic;
+  display: flex;
+  justify-content: space-between;
+  margin: $m-size 0 0 0;
+  padding: 0 $m-size;
+}
+
+.add-option-form {
+  display: flex;
+  padding: $s-size;
+}
+
+.add-option-form__input {
+  background: $dark-blue;
+  border: none;
+  border-bottom: 0.4rem solid darken($color: $dark-blue, $amount: 10%);
+  border-radius: 0.5rem 0rem 0rem 1.5rem;  
+  flex-grow: 1.0;
+  margin-right: $s-size;
+  color: $off-white;
+  padding: $s-size;
+  font-family: 'Exo', Helvetica, Arial, sans-serif;
+}
