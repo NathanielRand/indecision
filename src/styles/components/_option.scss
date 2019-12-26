@@ -8,6 +8,13 @@
 .option__text {
   // color: lighten($color: $peach, $amount: 15%);
   color: white;
-  font-size: 2.6rem;
+  font-size: 2rem;
   margin: 0;
+  word-break: break-all;
+}
+
+@media (min-width: $desktop-breakpoint) {
+  .option__text {        
+    font-size: 2.3rem;
+  }
 }

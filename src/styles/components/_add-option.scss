@@ -9,6 +9,7 @@
 
 .add-option-form {
   display: flex;
+  flex-direction: column;
   padding: $s-size;
 }
 
@@ -16,10 +17,22 @@
   background: $dark-blue;
   border: none;
   border-bottom: 0.4rem solid darken($color: $dark-blue, $amount: 10%);
-  border-radius: 0.5rem 0rem 0rem 1.5rem;  
+  // border-radius: 0.5rem .3rem .3rem 1.5rem;  
+  border-radius: 0.5rem 1.5rem;
   flex-grow: 1.0;
-  margin-right: $s-size;
+  margin: 0 0 $s-size 0;
   color: $off-white;
   padding: $s-size;
   font-family: 'Exo', Helvetica, Arial, sans-serif;
+}
+
+@media (min-width: $desktop-breakpoint) {
+  .add-option-form {
+    flex-direction: row;
+  }
+
+  .add-option-form__input {
+    margin: 0 $s-size 0 0;
+    border-radius: 0.5rem .5rem .5rem 1.5rem;
+  }
 }

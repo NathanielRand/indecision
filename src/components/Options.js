@@ -13,7 +13,7 @@ const Options = (props) => (
       </button>
     </div>
     <div>
-      {props.options.length === 0 && <p className="widget__alert">Add options to start deciding</p>}
+      {props.options.length === 0 && <p className="widget__alert">Add options to start</p>}
       {
         props.options.map((option, index) => (
           <Option
