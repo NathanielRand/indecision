@@ -2,11 +2,11 @@
   opacity: 0;
 }
 
-.ReactModalPortal .ReactModal__Overlay {  
+.ReactModalPortal .ReactModal__Overlay {
   align-items: center;
   display: flex;
   justify-content: center;
-  transition: opacity 400ms ease-in-out;  
+  transition: opacity 400ms ease-in-out;
 }
 
 .ReactModalPortal .ReactModal__Overlay--after-open {
@@ -23,6 +23,7 @@
   padding: $l-size;
   text-align: center;
   width: 30rem;
+  border-radius: 1rem 3rem;
 }
 
 .modal__title {
